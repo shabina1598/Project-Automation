@@ -9,7 +9,6 @@ import utility.GeneralUtilities;
 import utility.WaitUtilities;
 
 public class MyProfilePageClass {
-	
 
 	WebDriver driver;
 	GeneralUtilities gUtil = new GeneralUtilities();
@@ -21,14 +20,12 @@ public class MyProfilePageClass {
 		PageFactory.initElements(driver, this);
 
 	}
-	
-	@FindBy(xpath = "//h1[contains(text(),'My Profile')]")WebElement myProfile;
-	
-	public String getTextOfMyProfile()
-	{
+
+	@FindBy(xpath = "//h1[contains(text(),'My Profile')]")
+	WebElement myProfile;
+
+	public String getTextOfMyProfile() {
 		return gUtil.getTextOfElement(myProfile);
 	}
-	
-
 
 }

@@ -32,79 +32,84 @@ public class UsersPageClass {
 	WebElement addBtn;
 	@FindBy(xpath = "//input[@type='search']")
 	WebElement search;
-	@FindBy(xpath = "//table//tbody//tr//td[contains(text(),'Shabina')]")WebElement searchResult;
-	@FindBy(xpath = "//table//tbody//tr[1]//td[5]//button[contains(text(),'Delete')]")WebElement deleteBtn;
-	@FindBy(xpath = "//button[text()='OK']")WebElement deleteOk;
-	@FindBy(xpath = "//table//tbody//tr//td[contains(text(),'No matching records found')]")WebElement emptySearchResult;
-	@FindBy(xpath = "//table//tbody//tr[1]//td//a[contains(text(),'View')]")WebElement viewBtn;
-	@FindBy(xpath = " //span[contains(text(),'Action')]") WebElement actionBtn;
-	@FindBy(xpath = " //a[contains(text(),'Column visibility')]")WebElement columnVisibility;
-	@FindBy(xpath = "//a[text()='Username']")WebElement usernameColumn;
-	@FindBy(xpath = "//a[text()='Role']")WebElement roleColumn;
-	@FindBy(xpath ="//table//thead//tr[1]//th")List<WebElement> userTableHeaders;
-	
-	//Only locate table rows here
-    @FindBy(xpath = "//table/tbody/tr")
-	
-    public  List<WebElement> tableRows;
+	@FindBy(xpath = "//table//tbody//tr//td[contains(text(),'Shabina')]")
+	WebElement searchResult;
+	@FindBy(xpath = "//table//tbody//tr[1]//td[5]//button[contains(text(),'Delete')]")
+	WebElement deleteBtn;
+	@FindBy(xpath = "//button[text()='OK']")
+	WebElement deleteOk;
+	@FindBy(xpath = "//table//tbody//tr//td[contains(text(),'No matching records found')]")
+	WebElement emptySearchResult;
+	@FindBy(xpath = "//table//tbody//tr[1]//td//a[contains(text(),'View')]")
+	WebElement viewBtn;
+	@FindBy(xpath = " //span[contains(text(),'Action')]")
+	WebElement actionBtn;
+	@FindBy(xpath = " //a[contains(text(),'Column visibility')]")
+	WebElement columnVisibility;
+	@FindBy(xpath = "//a[text()='Username']")
+	WebElement usernameColumn;
+	@FindBy(xpath = "//a[text()='Role']")
+	WebElement roleColumn;
+	@FindBy(xpath = "//table//thead//tr[1]//th")
+	List<WebElement> userTableHeaders;
 
-    @FindBy(xpath = "//table/tbody/tr[1]")
-    private WebElement firstRow;
+	// Only locate table rows here
+	@FindBy(xpath = "//table/tbody/tr")
 
-    
-    
-   
-    public List<WebElement> getTableRows() {
-    	
-    	
-        return tableRows;
-    }
-    
-    public WebElement getFirstRow() {
-    	
-    	
-        return firstRow;
-    }
+	public List<WebElement> tableRows;
 
-	
-	public void clickOnAddBtn() {
+	@FindBy(xpath = "//table/tbody/tr[1]")
+	private WebElement firstRow;
+
+	public List<WebElement> getTableRows() {
+
+		return tableRows;
+	}
+
+	public WebElement getFirstRow() {
+
+		return firstRow;
+	}
+
+	public AddUserPageClass clickOnAddBtn() {
 
 		gUtil.clickUsingJavaScriptExecutor(driver, addBtn);
+		return new AddUserPageClass(driver);
+				
 	}
 
 	public String getUrlOfUserPage(WebDriver driver) {
 
 		return gUtil.getCurrentUrlOfPage(driver);
 	}
-	
-	public void searchForUser(String user) {
-		
-	
+
+	public void searchForUser(String user) throws InterruptedException {
+
 		search.sendKeys(user);
-		
+		gUtil.addSleep(2000);
 	}
-	
-	
+
 	public String searchResultOfUser() {
-		
+
 		return gUtil.getTextOfElement(searchResult);
 	}
-	
+
 	public void clickOnDeleteInAction() {
 		
+		wUtil.waitForElementToBeClickable(driver, 2, deleteBtn);
 		deleteBtn.click();
 		wUtil.waitForElementToBeClickable(driver, 2, deleteOk);
 		deleteOk.click();
-		
-		
+
 	}
+
 	public String getTextOfEmptySearchResult() {
-		
+
 		return gUtil.getTextOfElement(emptySearchResult);
 	}
 
 	public void clickOnColumnVisibility() {
-		
+
 		wUtil.waitForElementToBeClickable(driver, 1, actionBtn);
 		actionBtn.click();
 		wUtil.waitForElementToBeClickable(driver, 1, columnVisibility);
@@ -114,13 +119,13 @@ public class UsersPageClass {
 		wUtil.waitForElementToBeClickable(driver, 1, roleColumn);
 		roleColumn.click();
 	}
-	public List<String> getTextOfUserTableHeaders()
-	{
+
+	public List<String> getTextOfUserTableHeaders() {
 		List<String> headerText = new ArrayList<>();
 		for (WebElement headers : userTableHeaders) {
-			
+
 			headerText.add(headers.getText().trim());
-			
+
 		}
 		return headerText;
 	}

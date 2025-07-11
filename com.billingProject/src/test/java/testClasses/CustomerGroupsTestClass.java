@@ -19,41 +19,30 @@ import utility.RandonDataUtility;
 import utility.TableUtility;
 import utility.WaitUtilities;
 
-public class CustomerGroupsTestClass  extends BaseClass{
+public class CustomerGroupsTestClass extends BaseClass {
 
 	LoginPageClass lp;
 	DashboardPageClass dp;
 	CustomerGroupsPageClass cgp;
-	WaitUtilities wUtil = new WaitUtilities();
-	GeneralUtilities gUtil  = new GeneralUtilities();
-	
-	
-  @Test
-  public void verifyAddCustomerGroupFunctionality() throws IOException, InterruptedException {
-	  
+
+	@Test(priority = 12)
+	public void verifyAddCustomerGroupFunctionality() throws IOException, InterruptedException {
+
 		lp = new LoginPageClass(driver);
-		lp.login(ExcelReadUtility.getStringData(2, 0, "Login"), ExcelReadUtility.getIntData(2, 1, "Login"));
-		dp = new DashboardPageClass(driver);
+		dp=lp.login(ExcelReadUtility.getStringData(2, 0, "Login"), ExcelReadUtility.getIntData(2, 1, "Login"));
 		dp.isEndTourDispalyed();
-		dp.clickOnCustomerGroupsSubMenu();
-		cgp = new CustomerGroupsPageClass(driver);
+		cgp=dp.clickOnCustomerGroupsSubMenu();
+		//cgp = new CustomerGroupsPageClass(driver);
 		cgp.clickOnAddBtn();
 		String customerGroupName = RandonDataUtility.getCustomerGroupName();
 		String percentage = RandonDataUtility.getRandomPercentage();
 		cgp.addCustomerGroup(customerGroupName, percentage);
-		
-		gUtil.addSleep(2000);
 		cgp.searchForCustomerGroup(customerGroupName);
-		
-		gUtil.addSleep(2000);
 		List<WebElement> filteredRows = cgp.getTableRows();
-
 		boolean actualResult = TableUtility.isTextPresentInTable(filteredRows, customerGroupName);
 		System.out.println("Customer group found ?: " + actualResult);
 		Assert.assertTrue(actualResult, "The customer group " + customerGroupName + " is not found");
-	  
-  }
-  
-  
-}
 
+	}
+
+}

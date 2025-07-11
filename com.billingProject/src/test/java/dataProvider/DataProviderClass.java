@@ -9,9 +9,7 @@ import java.io.IOException;
 import org.testng.annotations.DataProvider;
 
 public class DataProviderClass {
-	@Test(dataProvider = "dp")
-	public void f(Integer n, String s) {
-	}
+	
 
 	@DataProvider(name = "unSuccessfullLogin")
 	public Object[][] dp() throws IOException {

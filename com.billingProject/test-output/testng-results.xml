@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-10T16:47:57 IST" name="Default suite" finished-at="2025-07-10T16:48:11 IST" duration-ms="13703">
+  <suite started-at="2025-07-11T20:12:51 IST" name="Default suite" finished-at="2025-07-11T20:13:11 IST" duration-ms="20406">
     <groups>
     </groups>
-    <test started-at="2025-07-10T16:47:57 IST" name="Default test" finished-at="2025-07-10T16:48:11 IST" duration-ms="13703">
-      <class name="testClasses.UserTestClass">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testClasses.UserTestClass@408d971b]" started-at="2025-07-10T16:47:57 IST" name="beforeMethod" finished-at="2025-07-10T16:48:00 IST" duration-ms="2516" status="PASS">
+    <test started-at="2025-07-11T20:12:51 IST" name="Default test" finished-at="2025-07-11T20:13:11 IST" duration-ms="20406">
+      <class name="testClasses.AddUserTestClass">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testClasses.AddUserTestClass@1d296da]" started-at="2025-07-11T20:12:51 IST" name="beforeMethod" finished-at="2025-07-11T20:12:53 IST" duration-ms="2570" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyUserSearchFunctionality()[pri:0, instance:testClasses.UserTestClass@408d971b]" started-at="2025-07-10T16:48:00 IST" name="verifyUserSearchFunctionality" finished-at="2025-07-10T16:48:09 IST" duration-ms="8668" status="PASS">
+        <test-method signature="verifyAddUserFunctionality()[pri:11, instance:testClasses.AddUserTestClass@1d296da]" started-at="2025-07-11T20:12:53 IST" name="verifyAddUserFunctionality" finished-at="2025-07-11T20:13:09 IST" duration-ms="15306" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUserSearchFunctionality -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testClasses.UserTestClass@408d971b]" started-at="2025-07-10T16:48:09 IST" name="afterMethod" finished-at="2025-07-10T16:48:11 IST" duration-ms="2475" status="PASS">
+        </test-method> <!-- verifyAddUserFunctionality -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testClasses.AddUserTestClass@1d296da]" started-at="2025-07-11T20:13:09 IST" name="afterMethod" finished-at="2025-07-11T20:13:11 IST" duration-ms="2477" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- testClasses.UserTestClass -->
+      </class> <!-- testClasses.AddUserTestClass -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

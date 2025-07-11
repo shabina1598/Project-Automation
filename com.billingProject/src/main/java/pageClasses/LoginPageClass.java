@@ -30,15 +30,16 @@ public class LoginPageClass {
 	@FindBy(xpath = "//span[@class='help-block']//strong[contains(text(),'do not match our records.')]")
 	WebElement loginErrorMsg;
 
-	public void login(String u_name, String p_word) {
+	public DashboardPageClass login(String u_name, String p_word) {
 		username.sendKeys(u_name);
 		password.sendKeys(p_word);
 		loginBtn.click();
+		return new DashboardPageClass(driver);
 
 	}
-	
+
 	public String getTextOfLoginErrorMsg() {
-		
+
 		return gUtil.getTextOfElement(loginErrorMsg);
 	}
 

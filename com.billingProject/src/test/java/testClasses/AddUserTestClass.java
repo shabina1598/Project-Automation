@@ -25,36 +25,29 @@ public class AddUserTestClass extends BaseClass {
 	DashboardPageClass dp;
 	UsersPageClass up;
 	AddUserPageClass aup;
-	WaitUtilities wUtil =new WaitUtilities();
-	GeneralUtilities gUtil = new GeneralUtilities();
 
-	@Test
+	@Test(priority = 11)
 	public void verifyAddUserFunctionality() throws IOException, InterruptedException {
 
 		lp = new LoginPageClass(driver);
-		lp.login(ExcelReadUtility.getStringData(2, 0, "Login"), ExcelReadUtility.getIntData(2, 1, "Login"));
-		dp = new DashboardPageClass(driver);
-		dp.navigateToUserPage();
-		up = new UsersPageClass(driver);
-		up.clickOnAddBtn();
-		aup = new AddUserPageClass(driver);
+		dp=lp.login(ExcelReadUtility.getStringData(2, 0, "Login"), ExcelReadUtility.getIntData(2, 1, "Login"));
+		up=dp.navigateToUserPage();
+		//up = new UsersPageClass(driver);
+		aup=up.clickOnAddBtn();
+		//aup = new AddUserPageClass(driver);
+		
 		String prefix = RandonDataUtility.getPrefix();
 		String fname = RandonDataUtility.getFirstName();
 		String lname = RandonDataUtility.getLastName();
 		String email = RandonDataUtility.getEmail_Utility();
 		String password = RandonDataUtility.getPassword();
 		int roleIndex = RandonDataUtility.getRandomRoleIndex();
-		
+
 		aup.addUser(prefix, fname, lname, email, roleIndex, password, password);
 		up.searchForUser(fname);
-		
-		gUtil.addSleep(2000);
-		//wUtil.waitForVisibilityOfElement(driver, 5, up.getFirstRow());
-
 		List<WebElement> filteredRows = up.getTableRows();
 		boolean actualResult = TableUtility.isTextPresentInTable(filteredRows, fname);
 		System.out.println("User found? " + actualResult);
-
 		Assert.assertTrue(actualResult, "User with name '" + fname + "' not found in search results.");
 
 	}
