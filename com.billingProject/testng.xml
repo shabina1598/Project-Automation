@@ -4,6 +4,7 @@
 
 	<listeners>
 		<listener class-name="retry.RetryListener" />
+		<listener class-name="extentReport.TestListener" />
 	</listeners>
 
 

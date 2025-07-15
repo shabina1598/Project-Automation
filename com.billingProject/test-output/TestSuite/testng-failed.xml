@@ -3,11 +3,13 @@
 <suite name="Failed suite [TestSuite]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="retry.RetryListener"/>
+    <listener class-name="extentReport.TestListener"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
       <class name="testClasses.LoginTestClass">
         <methods>
+          <include name="createReport"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
           <include name="verifySuccessfullLogin"/>

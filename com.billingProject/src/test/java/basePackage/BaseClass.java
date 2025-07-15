@@ -3,8 +3,10 @@ package basePackage;
 import org.testng.annotations.Test;
 
 import constants.ConstantClass;
+import extentReport.ExtentManager;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -17,7 +19,7 @@ import org.testng.annotations.AfterMethod;
 
 public class BaseClass {
 	
-	public WebDriver driver;
+	public static WebDriver driver;
 	public static Properties property;
 	
 	public static void readProperty() throws IOException {
@@ -44,6 +46,12 @@ public class BaseClass {
 	  
 	  Thread.sleep(2000);
 	 driver.quit();
+  }
+  
+  @BeforeSuite(alwaysRun = true)
+  public void createReport()
+  {
+	  ExtentManager.createInstance();
   }
 
 }
