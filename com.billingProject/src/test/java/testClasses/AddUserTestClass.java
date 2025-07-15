@@ -26,7 +26,7 @@ public class AddUserTestClass extends BaseClass {
 	UsersPageClass up;
 	AddUserPageClass aup;
 
-	@Test(priority = 11)
+	@Test(priority = 1)
 	public void verifyAddUserFunctionality() throws IOException, InterruptedException {
 
 		lp = new LoginPageClass(driver);

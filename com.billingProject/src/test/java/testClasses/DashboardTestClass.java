@@ -17,7 +17,7 @@ public class DashboardTestClass extends BaseClass {
 	DashboardPageClass dp;
 	MyProfilePageClass mpp;
 
-	@Test(priority = 3)
+	@Test(priority = 2)
 	public void verifyTooltipTextOfHelpBtn() throws IOException {
 
 		lp = new LoginPageClass(driver);
@@ -31,7 +31,7 @@ public class DashboardTestClass extends BaseClass {
 
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 1)
 	public void verifyLogoIsDisplayed() throws IOException {
 		lp = new LoginPageClass(driver);
 		dp = lp.login(ExcelReadUtility.getStringData(2, 0, "Login"), ExcelReadUtility.getIntData(2, 1, "Login"));
@@ -46,7 +46,7 @@ public class DashboardTestClass extends BaseClass {
 
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 4)
 	public void verifyNavigationToMyProfileFromDashboard() throws IOException {
 
 		lp = new LoginPageClass(driver);
@@ -60,7 +60,7 @@ public class DashboardTestClass extends BaseClass {
 
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 5)
 	public void verifyTodaysProfitButtonIsWorking() throws IOException {
 
 		lp = new LoginPageClass(driver);
@@ -73,7 +73,7 @@ public class DashboardTestClass extends BaseClass {
 
 	}
 
-	@Test(priority = 7)
+	@Test(priority = 3)
 	public void verifyTotalPurchaseInfoIsDisplayed() throws IOException {
 		lp = new LoginPageClass(driver);
 		dp = lp.login(ExcelReadUtility.getStringData(2, 0, "Login"), ExcelReadUtility.getIntData(2, 1, "Login"));

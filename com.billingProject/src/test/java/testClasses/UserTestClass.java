@@ -29,7 +29,7 @@ public class UserTestClass extends BaseClass {
 	UsersPageClass up;
 	AddUserPageClass aup;
 
-	@Test(priority = 8)
+	@Test(priority = -1)
 	public void verifyUserSearchFunctionality() throws IOException, InterruptedException {
 
 		lp = new LoginPageClass(driver);
@@ -47,7 +47,7 @@ public class UserTestClass extends BaseClass {
 
 	}
 
-	@Test(priority = 9)
+	@Test(priority = 0)
 	public void verifyDeleteUserFunctionality() throws IOException, InterruptedException {
 
 		lp = new LoginPageClass(driver);
@@ -75,7 +75,7 @@ public class UserTestClass extends BaseClass {
 
 	}
 
-	@Test(priority = 10)
+	@Test(priority = 1)
 	public void verifyColumnVisibilityFunctionality() throws IOException {
 		lp = new LoginPageClass(driver);
 		dp = lp.login(ExcelReadUtility.getStringData(2, 0, "Login"), ExcelReadUtility.getIntData(2, 1, "Login"));

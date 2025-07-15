@@ -25,7 +25,7 @@ public class CustomerGroupsTestClass extends BaseClass {
 	DashboardPageClass dp;
 	CustomerGroupsPageClass cgp;
 
-	@Test(priority = 12)
+	@Test(priority = 1)
 	public void verifyAddCustomerGroupFunctionality() throws IOException, InterruptedException {
 
 		lp = new LoginPageClass(driver);

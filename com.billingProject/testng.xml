@@ -10,12 +10,13 @@
 
 	<test thread-count="5" name="Test">
 		<classes>
-			<!--<class name="testClasses.UserTestClass"/> -->
-			<!--<class name="testClasses.CustomerGroupsTestClass"/> -->
-			<!-- <class name="testClasses.MyProfileTestClass"/>-->
-			<!--<class name="testClasses.AddUserTestClass"/> -->
-			<class name="testClasses.LoginTestClass" />
-			<!-- <class name="testClasses.DashboardTestClass"/>-->
+		
+		<class name="testClasses.LoginTestClass" />
+		<!-- <class name="testClasses.DashboardTestClass"/>-->
+		<!--<class name="testClasses.UserTestClass"/> -->
+		<!--<class name="testClasses.AddUserTestClass"/> -->
+		<!--<class name="testClasses.CustomerGroupsTestClass"/> -->
+			
 		</classes>
 	</test> <!--
 	Test -->
