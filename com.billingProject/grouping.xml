@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+<listeners>
+		<listener class-name="retry.RetryListener" />
+		<listener class-name="extentReport.TestListener" />
+	</listeners>
+	<test thread-count="5" name="Test">
+<parameter name="browser" value="chrome"/>
+		<groups>
+			<run>
+				<include name="TearUp" />
+				<include name="group 1" />
+				<include name="TearDown" />
+			</run>
+		</groups>
+
+		<classes>
+
+			<class name="testClasses.LoginTestClass" />
+			<class name="testClasses.DashboardTestClass" />
+
+		</classes>
+	</test> <!--
+	Test -->
+
+</suite> <!--
+Suite -->

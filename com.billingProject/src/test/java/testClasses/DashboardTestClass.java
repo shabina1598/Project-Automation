@@ -60,7 +60,7 @@ public class DashboardTestClass extends BaseClass {
 
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 5,groups={"group 1"})
 	public void verifyTodaysProfitButtonIsWorking() throws IOException {
 
 		lp = new LoginPageClass(driver);
@@ -73,7 +73,7 @@ public class DashboardTestClass extends BaseClass {
 
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 3,groups={"group 1"})
 	public void verifyTotalPurchaseInfoIsDisplayed() throws IOException {
 		lp = new LoginPageClass(driver);
 		dp = lp.login(ExcelReadUtility.getStringData(2, 0, "Login"), ExcelReadUtility.getIntData(2, 1, "Login"));
